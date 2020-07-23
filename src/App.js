@@ -7,9 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <p>
-          EVENTSInc
-        </p>
+        <p>EVENTSInc</p>
 
       </header>
     </div>
