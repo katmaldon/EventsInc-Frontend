@@ -2,8 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header'
-import UserContainer from './Components/UserContainer'
-import EventsContainer from './Components/EventsContainer'
+import UserContainer from './Containers/UserContainer'
+import EventsContainer from './Containers/EventsContainer'
 import EventForm from './Components/EventForm'
 import Search from './Components/Search'
 //import TodosContainer from './Components/TodosContainer'
