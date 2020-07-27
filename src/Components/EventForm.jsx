@@ -8,6 +8,8 @@ class EventForm extends React.Component {
         image_url: "",
         date: "",
         time: "",
+        location: "",
+        price: "",
         event_url: "",
         user_id: null //pass in user_id automatically
     };
@@ -60,7 +62,7 @@ class EventForm extends React.Component {
                             />
                         </label>
 
-                        <label htmlFor="name" >Type:
+                        <label htmlFor="name" >Type: MAKE DROPDOWN
                 <input
                                 type="text"
                                 name="event_type"
@@ -96,6 +98,26 @@ class EventForm extends React.Component {
                                 name="time"
                                 id="time"
                                 value={this.state.time}
+                                onChange={this.handleChange}
+                            />
+                        </label><br></br><br></br>
+
+                        <label htmlFor="name" >Location:
+                <input
+                                type="text"
+                                name="location"
+                                id="location"
+                                value={this.state.location}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+
+                        <label htmlFor="name" >Price: $
+                <input
+                                type="text"
+                                name="price"
+                                id="price"
+                                value={this.state.price}
                                 onChange={this.handleChange}
                             />
                         </label>
