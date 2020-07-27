@@ -12,53 +12,21 @@ import NavBar from './Components/NavBar'
 
 class App extends React.Component {
 
-    state = {
-        events: [],
-        search: ''
+    // state = {
         // user: { name: "Kat", age: 35, image_url: "https://i.imgur.com/ZuTBJfC.png", bio: "software engineer, quarantined but uncontained adventurer" },
         // hardcoded just for now
         // favorite: false
+    //}
 
-    };
 
-    componentDidMount() {
-        fetch('http://localhost:3000/events')
-            .then(r => r.json())
-            .then(events => {
-                this.setState({ events });
-            });
-    };
+
+
     // returnEvents = () => {
     //     let events = this.state.events;
     //     return events;
     // };
 
-    addEvent = (eventPOJO) => {
-        let newEvents = [...this.state.events, eventPOJO];
-        this.setState({
-            events: newEvents,
-        });
-    };
 
-    deleteEvent = id => {
-        let newArr = this.state.events.filter(event => { return event.id !== id })
-        this.setState({
-            events: newArr
-        })
-    };
-
-    searchEvents = (search) => {
-        this.setState({
-            search: search,
-        });
-    };
-
-    filteredEvents = () => {
-        let searchArr = this.state.events.filter((event) =>
-            event.name.toLowerCase().includes(this.state.search.toLowerCase())
-        );
-        return searchArr;
-    };
 
     // additional functions
 
@@ -71,19 +39,13 @@ class App extends React.Component {
                 {/* <UserContainer
                     user={this.state.user}
                 /> */}
-                <Search
-                    search={this.state.search}
-                    searchEvents={this.searchEvents}
-                    filteredEvents={this.filteredEvent}
-                />
+
                 <EventsContainer
-                    events={this.state.events}
-                    deleteEvent={this.deleteEvent}
+                    // events={this.state.events}
+                    // deleteEvent={this.deleteEvent}
                     //handleLike={this.handleLike}
                 />
-                <EventForm
-                    addEvent={this.addEvent}
-                />
+
 
             </div>
         );
