@@ -7,10 +7,14 @@
 
   .navbar {
   background-color: aliceblue;
+  min-height: 20px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  font-size: 20px;
+  color: darkblue;
 }
   .Header {
     background-color: white;
