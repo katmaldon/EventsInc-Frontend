@@ -6,7 +6,7 @@ const Search = props => {
             <input
                 type="text"
                 placeholder={"Search for any event"}
-                onChange={(e) => props.handleSearch}
+                onChange={(e) => props.handleSearch(e.target.value)}
             />
         </div>
     );
