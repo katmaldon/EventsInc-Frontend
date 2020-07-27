@@ -21,7 +21,7 @@ class EventForm extends React.Component {
     handleSubmit = (e) => {
 
         e.preventDefault();
-        fetch('http://localhost:4000/events', {
+        fetch('http://localhost:3000/events', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

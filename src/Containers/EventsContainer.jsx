@@ -1,14 +1,17 @@
 import React from 'react';
-import Event from '.src/Components/Event';
+import Event from '../Components/Event';
 
 
 const EventsContainer = (props) => {
+    // console.log(props);
 
     let eventCardsArr = props.events.map((eventPOJO) => {
         return (
             <Event
+
                 key={eventPOJO.id}
-                event={eventPOJO}
+                // event={eventPOJO}
+                {...eventPOJO}
                 deleteEvent={props.deleteEvent}
             />
         );
@@ -16,7 +19,6 @@ const EventsContainer = (props) => {
 
     return (
         <section>
-            <h2>Events</h2>
                 <div className="event_cards">
                     {eventCardsArr}
                  </div>
