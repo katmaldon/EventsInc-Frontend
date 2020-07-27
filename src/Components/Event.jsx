@@ -4,10 +4,12 @@ class Event extends React.Component {
     state = {
         favorite: false
     }
+
     componentDidMount () {
         const  favorite = this.props.favorite
         this.setState({ favorite })
     }
+
     handleDelete = e => {
         fetch(`http://localhost:3000/events/${this.props.event.id}`, {
             method: "DELETE"
@@ -16,7 +18,7 @@ class Event extends React.Component {
             .then( deletedEvent => {
                 this.props.deleteEvent(this.props.event.id);
             });
-    };
+    }
 
     handleLike = (id, favorite) => {
         fetch(`http://localhost:3000/events/${id}`, {
@@ -40,7 +42,6 @@ class Event extends React.Component {
     render() {
         let { name, image_url, event_type, date, time, location, event_url, id } = this.props
 
-        // console.log(this.props);
         return (
             <div className="cards_item">
                 <div className="card">

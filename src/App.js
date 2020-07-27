@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-// import Header from './Components/Header'
+import Header from './Components/Header'
 // import UserContainer from './Containers/UserContainer'
 import EventsContainer from './Containers/EventsContainer'
 import EventForm from './Components/EventForm'
-// import Search from './Components/Search'
+import Search from './Components/Search'
 import NavBar from './Components/NavBar'
 //import TodosContainer from './Components/TodosContainer'
 // import TodoForm from './Components/TodoForm'
@@ -13,10 +13,10 @@ import NavBar from './Components/NavBar'
 class App extends React.Component {
 
     state = {
-        events: []
-    //     // user: { name: "Kat", age: 35, image_url: "https://i.imgur.com/ZuTBJfC.png", bio: "software engineer, quarantined but uncontained adventurer" },
-    //     // hardcoded just for now
-        //     // search: ''
+        events: [],
+        search: ''
+        // user: { name: "Kat", age: 35, image_url: "https://i.imgur.com/ZuTBJfC.png", bio: "software engineer, quarantined but uncontained adventurer" },
+        // hardcoded just for now
         // favorite: false
 
     };
@@ -47,19 +47,18 @@ class App extends React.Component {
         })
     };
 
+    searchEvents = (search) => {
+        this.setState({
+            search: search,
+        });
+    };
 
-    // searchEvents = (search) => {
-    //     this.setState({
-    //         search: search,
-    //     });
-    // };
-
-    // filteredEvents = () => {
-    //     let searchArr = this.state.events.filter((event) =>
-    //         event.name.toLowerCase().includes(this.state.search.toLowerCase())
-    //     );
-    //     return searchArr;
-    // };
+    filteredEvents = () => {
+        let searchArr = this.state.events.filter((event) =>
+            event.name.toLowerCase().includes(this.state.search.toLowerCase())
+        );
+        return searchArr;
+    };
 
     // additional functions
 
@@ -68,20 +67,20 @@ class App extends React.Component {
             <div>
                 <NavBar />
 
-                {/* <Header /> */}
+                <Header />
                 {/* <UserContainer
                     user={this.state.user}
                 /> */}
-                <EventsContainer
-                    events={this.state.events} 
-                   deleteEvent={this.deleteEvent}
-                   handleLike={this.handleLike}
-                 /> 
-                {/* <Search
+                <Search
                     search={this.state.search}
-                    //searchEvents={this.searchEvents}
-                    //filteredEvents={this.returnSearchedEvent}
-                /> */}
+                    searchEvents={this.searchEvents}
+                    filteredEvents={this.filteredEvent}
+                />
+                <EventsContainer
+                    events={this.state.events}
+                    deleteEvent={this.deleteEvent}
+                    //handleLike={this.handleLike}
+                />
                 <EventForm
                     addEvent={this.addEvent}
                 />
