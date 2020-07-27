@@ -2,26 +2,30 @@ import React from 'react';
 import Event from '../Components/Event';
 
 
-const EventsContainer = (props) => {
-    // console.log(props);
-
-    let eventCardsArr = props.events.map((eventPOJO) => {
-        return (
-            <Event
-
-                key={eventPOJO.id}
-                // event={eventPOJO}
-                {...eventPOJO}
-                deleteEvent={props.deleteEvent}
-            />
-        );
-    });
+const EventsContainer = props => {
+    console.log(props);
+    // return(
+    //     <div>
+    //        {props.events.map(eventPOJO => <Event key={eventPOJO.id} deleteEvent={props.deleteEvent} likeEvent={props.handleLike}/>)}
+    //     </div>
+    // )
+    // // let eventCardsArr = props.events.map((eventPOJO) => {
+    // //     return (
+    // //         <Event
+    // //             key={eventPOJO.id}
+    // //             {...eventPOJO}
+    // //             deleteEvent={props.deleteEvent}
+    // //             likeEvent={props.handleLike}
+    // //         />
+    // //     );
+    // // });
 
     return (
         <section>
-                <div className="event_cards">
-                    {eventCardsArr}
-                 </div>
+            <div className="event_cards">
+                    {/* {eventCardsArr} */}
+                {props.events.map(eventPOJO => <Event key={eventPOJO.id} {...eventPOJO} deleteEvent={props.deleteEvent} likeEvent={props.handleLike}/>)}
+            </div>
         </section>
     );
 };

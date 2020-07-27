@@ -16,7 +16,9 @@ class App extends React.Component {
         events: []
     //     // user: { name: "Kat", age: 35, image_url: "https://i.imgur.com/ZuTBJfC.png", bio: "software engineer, quarantined but uncontained adventurer" },
     //     // hardcoded just for now
-    //     // search: ''
+        //     // search: ''
+        // favorite: false
+
     };
 
     componentDidMount() {
@@ -38,12 +40,13 @@ class App extends React.Component {
         });
     };
 
-    deleteEvent = (id) => {
+    deleteEvent = id => {
         let newArr = this.state.events.filter(event => { return event.id !== id })
         this.setState({
             events: newArr
         })
     };
+
 
     // searchEvents = (search) => {
     //     this.setState({
@@ -72,6 +75,7 @@ class App extends React.Component {
                 <EventsContainer
                     events={this.state.events} 
                    deleteEvent={this.deleteEvent}
+                   handleLike={this.handleLike}
                  /> 
                 {/* <Search
                     search={this.state.search}
