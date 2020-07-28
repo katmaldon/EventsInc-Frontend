@@ -1,28 +1,78 @@
-import React from 'react';
-import Event from '../Components/Event';
+import React, { Component } from 'react';
+import EventsCollection from '../Components/EventsCollection';
+import EventForm from '../Components/EventForm';
+import Search from '../Components/Search';
 
 
-const EventsContainer = props => {
-    console.log(props);
-    let eventCardsArr = props.events.map((eventPOJO) => {
+class EventsContainer extends Component {
+
+    state = {
+        events: [],
+        search: ''
+    }
+
+    fetchEvents = () => {
+        fetch('http://localhost:3000/events')
+            .then(r => r.json())
+            .then(events => {
+                this.setState({ events });
+            });
+    };
+
+    componentDidMount() {
+        this.fetchEvents()
+    };
+
+    handleSearch = (search) => {
+        this.setState({ search: search })
+    };
+
+    addEvent = (event) => {
+        let newEvents = [...this.state.events, event];
+        this.setState({
+            events: newEvents,
+        });
+    };
+
+    handleDelete = id => {
+        const options = {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+        }
+        fetch(`http://localhost:3000/events/${id}`, options)
+        .then(r => r.json())
+        .then(this.fetchEvents)
+    }
+
+    //     let newArr = this.state.events.filter(event => { return event.id !== id })
+    //     this.setState({
+    //         events: newArr
+    //     })
+    // };
+
+
+    render() {
+
+        const filteredEvents = this.state.events.filter(event => event.name.toLowerCase().includes(this.state.search.toLowerCase()))
+
         return (
-            <Event
-                key={eventPOJO.id}
-                {...eventPOJO}
-                deleteEvent={props.deleteEvent}
-                likeEvent={props.handleLike}
-                updateFavorite={props.updateFavorite}
-            />
-        );
-    });
-
-    return (
-        <section>
-            <div className="event_cards">
-                {eventCardsArr}
+            <div>
+                <Search
+                    handleSearch={this.handleSearch}
+                />
+                <EventsCollection
+                    events={filteredEvents}
+                    handleDelete={this.handleDelete}
+                />
+                <EventForm
+                    addEvent={this.addEvent}
+                />
             </div>
-        </section>
-    );
+        );
+    };
 };
 
 export default EventsContainer;

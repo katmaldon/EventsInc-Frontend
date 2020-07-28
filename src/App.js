@@ -1,13 +1,10 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header'
-// import UserContainer from './Containers/UserContainer'
 import EventsContainer from './Containers/EventsContainer'
-import EventForm from './Components/EventForm'
-import Search from './Components/Search'
 import NavBar from './Components/NavBar'
-//import TodosContainer from './Components/TodosContainer'
+// import UserContainer from './Containers/UserContainer'
+// import TodosContainer from './Components/TodosContainer'
 // import TodoForm from './Components/TodoForm'
 
 class App extends React.Component {
@@ -50,33 +47,39 @@ class App extends React.Component {
         );
         return searchArr;
     };
-    updateFavorite = id => {
-        this.setState({
-            events: [...this.state.events.map(e => {
-                if (e.id === id) {
-                    e.favorite = !e.favorite
-                    return e
-                }
-                else {
-                    return e
-                }
-            }
-            )]
 
-        })
-    }
+    // move to EventsContainer
+    // updateFavorite = id => {
+    //     this.setState({
+    //         events: [...this.state.events.map(e => {
+    //             if (e.id === id) {
+    //                 e.favorite = !e.favorite
+    //                 return e
+    //             }
+    //             else {
+    //                 return e
+    //             }
+    //         }
+    //         )]
+
+    //     })
+    // }
     // additional functions
+    // state = {
+        // user: { name: "Kat", age: 35, image_url: "https://i.imgur.com/ZuTBJfC.png", bio: "software engineer, quarantined but uncontained adventurer" },
+        // hardcoded just for now
+        // favorite: false
+    //
 
     render() {
         return (
             <div>
                 <NavBar />
-
                 <Header />
                 {/* <UserContainer
                     user={this.state.user}
                 /> */}
-                <Search
+                {/* <Search
                     search={this.state.search}
                     searchEvents={this.searchEvents}
                     filteredEvents={this.filteredEvent}
@@ -88,8 +91,9 @@ class App extends React.Component {
                 />
                 <EventForm
                     addEvent={this.addEvent}
-                />
+                /> */}
 
+                <EventsContainer />
             </div>
         );
     }
