@@ -11,36 +11,33 @@ class Event extends React.Component {
     }
 
     handleDelete = e => {
-        fetch(`http://localhost:3000/events/${this.props.event.id}`, {
+        fetch(`http://localhost:3000/events/${this.props.id}`, {
             method: "DELETE"
         })
             .then(r => r.json())
             .then( deletedEvent => {
-                this.props.deleteEvent(this.props.event.id);
+                this.props.deleteEvent(this.props.id);
             });
     }
 
-    handleLike = (id, favorite) => {
-        fetch(`http://localhost:3000/events/${id}`, {
+    handleUpdateFavorite = () => {
+        fetch(`http://localhost:3000/events/${this.props.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json'
             },
-            body: JSON.stringify({ favorite: !favorite })
+            body: JSON.stringify({ favorite: !this.props.favorite })
         })
             .then(res => res.json())
             .then(e => {
                 console.log(e);
-                let targetEventIndex = this.state.events.findIndex(event => event.id === e.id)
-                let copyEvents = [...this.state.events] // DO NOT MUTATE STATE
-                copyEvents[targetEventIndex] = e
-                this.setState({ events: copyEvents })
+                this.props.updateFavorite(this.props.id)
             })
     }
 
     render() {
-        let { name, image_url, event_type, date, time, location, event_url, id } = this.props
+        let { name, image_url, event_type, date, time, location, event_url } = this.props
 
         return (
             <div className="cards_item">
@@ -54,7 +51,7 @@ class Event extends React.Component {
                             <p>Location: {location} </p>
                             <p>Event details: <a href={event_url}>{event_url}</a></p>
                         </div>
-                        <button onClick={() => this.handleLike( id, this.state.favorite)}>{this.state.favorite ? "💚" : "♡"}</button>
+                        <p onClick={this.handleUpdateFavorite}>{this.props.favorite ? "💚" : "♡"}</p>
                         <button onClick={this.handleDelete}>Delete event</button>
                     </div>
                 </div><br></br>

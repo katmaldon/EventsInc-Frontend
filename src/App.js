@@ -15,10 +15,6 @@ class App extends React.Component {
     state = {
         events: [],
         search: ''
-        // user: { name: "Kat", age: 35, image_url: "https://i.imgur.com/ZuTBJfC.png", bio: "software engineer, quarantined but uncontained adventurer" },
-        // hardcoded just for now
-        // favorite: false
-
     };
 
     componentDidMount() {
@@ -28,11 +24,6 @@ class App extends React.Component {
                 this.setState({ events });
             });
     };
-    // returnEvents = () => {
-    //     let events = this.state.events;
-    //     return events;
-    // };
-
     addEvent = (eventPOJO) => {
         let newEvents = [...this.state.events, eventPOJO];
         this.setState({
@@ -59,7 +50,21 @@ class App extends React.Component {
         );
         return searchArr;
     };
+    updateFavorite = id => {
+        this.setState({
+            events: [...this.state.events.map(e => {
+                if (e.id === id) {
+                    e.favorite = !e.favorite
+                    return e
+                }
+                else {
+                    return e
+                }
+            }
+            )]
 
+        })
+    }
     // additional functions
 
     render() {
@@ -79,7 +84,7 @@ class App extends React.Component {
                 <EventsContainer
                     events={this.state.events}
                     deleteEvent={this.deleteEvent}
-                    //handleLike={this.handleLike}
+                    updateFavorite={this.updateFavorite}
                 />
                 <EventForm
                     addEvent={this.addEvent}
