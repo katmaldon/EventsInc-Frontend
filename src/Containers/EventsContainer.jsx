@@ -34,23 +34,37 @@ class EventsContainer extends Component {
         });
     };
 
-    handleDelete = id => {
-        const options = {
-            method: "DELETE",
-            headers: {
-                "content-type": "application/json",
-                "accept": "application/json"
-            },
-        }
-        fetch(`http://localhost:3000/events/${id}`, options)
-        .then(r => r.json())
-        .then(this.fetchEvents)
-    }
+    deleteEvent = id => {
+        let newArr = this.state.events.filter(event => { return event.id !== id })
+        this.setState({
+            events: newArr
+        })
+    };
 
-    //     let newArr = this.state.events.filter(event => { return event.id !== id })
-    //     this.setState({
-    //         events: newArr
+    // handleDelete = id => {
+    //     fetch(`http://localhost:3000/events/${id}`, {
+    //         method: "DELETE"
     //     })
+    //         .then(r => r.json())
+    //         .then(deletedEvent => {
+    //             this.deleteEvent(id);
+    //         });
+    // }
+
+    // handleUpdateFavorite = () => {
+    //     fetch(`http://localhost:3000/events/${this.props.id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             Accept: 'application/json'
+    //         },
+    //         body: JSON.stringify({ favorite: !this.props.favorite })
+    //     })
+    //         .then(res => res.json())
+    //         .then(e => {
+    //             console.log(e);
+    //             this.props.updateFavorite(this.props.id)
+    //         })
     // };
 
 
@@ -66,6 +80,8 @@ class EventsContainer extends Component {
                 <EventsCollection
                     events={filteredEvents}
                     handleDelete={this.handleDelete}
+                    deleteEvent={this.deleteEvent}
+
                 />
                 <EventForm
                     addEvent={this.addEvent}

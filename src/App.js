@@ -9,44 +9,55 @@ import NavBar from './Components/NavBar'
 
 class App extends React.Component {
 
-    state = {
-        events: [],
-        search: ''
-    };
-
-    componentDidMount() {
-        fetch('http://localhost:3000/events')
-            .then(r => r.json())
-            .then(events => {
-                this.setState({ events });
-            });
-    };
-    addEvent = (eventPOJO) => {
-        let newEvents = [...this.state.events, eventPOJO];
-        this.setState({
-            events: newEvents,
-        });
-    };
-
-    deleteEvent = id => {
-        let newArr = this.state.events.filter(event => { return event.id !== id })
-        this.setState({
-            events: newArr
-        })
-    };
-
-    searchEvents = (search) => {
-        this.setState({
-            search: search,
-        });
-    };
-
-    filteredEvents = () => {
-        let searchArr = this.state.events.filter((event) =>
-            event.name.toLowerCase().includes(this.state.search.toLowerCase())
+    render() {
+        return (
+            <div>
+                <NavBar />
+                <Header />
+                <EventsContainer />
+            </div>
         );
-        return searchArr;
-    };
+    }
+}
+
+export default App;
+
+
+
+
+    // state = {
+    //     events: [],
+    //     search: ''
+    // };
+
+    // componentDidMount() {
+    //     fetch('http://localhost:3000/events')
+    //         .then(r => r.json())
+    //         .then(events => {
+    //             this.setState({ events });
+    //         });
+    // };
+    // addEvent = (eventPOJO) => {
+    //     let newEvents = [...this.state.events, eventPOJO];
+    //     this.setState({
+    //         events: newEvents,
+    //     });
+    // };
+
+
+
+    // searchEvents = (search) => {
+    //     this.setState({
+    //         search: search,
+    //     });
+    // };
+
+    // filteredEvents = () => {
+    //     let searchArr = this.state.events.filter((event) =>
+    //         event.name.toLowerCase().includes(this.state.search.toLowerCase())
+    //     );
+    //     return searchArr;
+    // };
 
     // move to EventsContainer
     // updateFavorite = id => {
@@ -71,32 +82,3 @@ class App extends React.Component {
         // favorite: false
     //
 
-    render() {
-        return (
-            <div>
-                <NavBar />
-                <Header />
-                {/* <UserContainer
-                    user={this.state.user}
-                /> */}
-                {/* <Search
-                    search={this.state.search}
-                    searchEvents={this.searchEvents}
-                    filteredEvents={this.filteredEvent}
-                />
-                <EventsContainer
-                    events={this.state.events}
-                    deleteEvent={this.deleteEvent}
-                    updateFavorite={this.updateFavorite}
-                />
-                <EventForm
-                    addEvent={this.addEvent}
-                /> */}
-
-                <EventsContainer />
-            </div>
-        );
-    }
-}
-
-export default App;
