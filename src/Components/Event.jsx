@@ -15,7 +15,7 @@ const Event = (props) => {
                         <p>Price: ${props.price} </p>
                         <p>Event details: <a href={props.event_url}>{props.event_url}</a></p>
                     </div>
-                    <p onClick={props.handleUpdateFavorite}>{props.favorite ? "💚" : "♡"}</p>
+                    <p onClick={() => props.handleLike(props.id)}>{props.favorite ? "💚" : "♡"}</p>
                     <button onClick={() => props.handleDelete(props.id)}>Delete event</button>
                 </div>
             </div>

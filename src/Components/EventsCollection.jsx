@@ -10,6 +10,7 @@ const EventsCollection = (props) => {
                     {...event}
                     handleDelete={props.handleDelete}
                     deleteEvent={props.deleteEvent}
+                    handleLike={props.handleLike}
                 />
             )}
         </div>

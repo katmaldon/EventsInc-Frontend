@@ -6,17 +6,19 @@ import Search from '../Components/Search';
 
 class EventsContainer extends Component {
 
+
     state = {
         events: [],
-        search: ''
+        search: '',
+        favorite: false
     }
 
     fetchEvents = () => {
         fetch('http://localhost:3000/events')
-            .then(r => r.json())
-            .then(events => {
-                this.setState({ events });
-            });
+        .then(r => r.json())
+        .then(events => {
+            this.setState({ events });
+        });
     };
 
     componentDidMount() {
@@ -41,6 +43,14 @@ class EventsContainer extends Component {
         })
     };
 
+    likeEvent = () => {
+        let updatedLike = !this.state.favorite
+        this.setState({
+            favorite: updatedLike
+        })
+        return this.favorite
+    };
+
     handleDelete = (id) => {
         const options = {
             method: "DELETE"
@@ -49,23 +59,27 @@ class EventsContainer extends Component {
         fetch(`http://localhost:3000/events/${id}`, options)
             .then(r => r.json())
             .then(this.fetchEvents)
-    }
+    };
 
-    // handleUpdateFavorite = () => {
-    //     fetch(`http://localhost:3000/events/${this.props.id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             Accept: 'application/json'
-    //         },
-    //         body: JSON.stringify({ favorite: !this.props.favorite })
-    //     })
-    //         .then(res => res.json())
-    //         .then(e => {
-    //             console.log(e);
-    //             this.props.updateFavorite(this.props.id)
-    //         })
-    // };
+    handleLike = (id) => {
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                favorite: !this.props.favorite
+            })
+        }
+
+        fetch(`http://localhost:3000/events/${id}`, options)
+            .then(res => res.json())
+            .then(e => {
+                console.log(e);
+                this.likeEvent(id)
+            })
+    }
 
 
     render() {
@@ -81,6 +95,8 @@ class EventsContainer extends Component {
                     events={filteredEvents}
                     handleDelete={this.handleDelete}
                     deleteEvent={this.deleteEvent}
+                    handleLike={this.handleLike}
+                    likeEvent={this.likeEvent}
                 />
                 <EventForm
                     addEvent={this.addEvent}
