@@ -8,6 +8,7 @@ const EventsCollection = (props) => {
             {props.events.map(event =>
                 <Event key={event.id}
                     {...event}
+                    handleDelete={props.handleDelete}
                     deleteEvent={props.deleteEvent}
                 />
             )}

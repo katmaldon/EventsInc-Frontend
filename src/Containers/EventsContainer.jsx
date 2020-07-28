@@ -41,15 +41,15 @@ class EventsContainer extends Component {
         })
     };
 
-    // handleDelete = id => {
-    //     fetch(`http://localhost:3000/events/${id}`, {
-    //         method: "DELETE"
-    //     })
-    //         .then(r => r.json())
-    //         .then(deletedEvent => {
-    //             this.deleteEvent(id);
-    //         });
-    // }
+    handleDelete = (id) => {
+        const options = {
+            method: "DELETE"
+        }
+
+        fetch(`http://localhost:3000/events/${id}`, options)
+            .then(r => r.json())
+            .then(this.fetchEvents)
+    }
 
     // handleUpdateFavorite = () => {
     //     fetch(`http://localhost:3000/events/${this.props.id}`, {
@@ -81,7 +81,6 @@ class EventsContainer extends Component {
                     events={filteredEvents}
                     handleDelete={this.handleDelete}
                     deleteEvent={this.deleteEvent}
-
                 />
                 <EventForm
                     addEvent={this.addEvent}
