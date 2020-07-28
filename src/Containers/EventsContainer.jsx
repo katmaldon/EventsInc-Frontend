@@ -10,15 +10,15 @@ class EventsContainer extends Component {
     state = {
         events: [],
         search: '',
-        favorite: false
+        // favorite: false
     }
 
     fetchEvents = () => {
         fetch('http://localhost:3000/events')
-        .then(r => r.json())
-        .then(events => {
-            this.setState({ events });
-        });
+            .then(r => r.json())
+            .then(events => {
+                this.setState({ events });
+            });
     };
 
     componentDidMount() {
@@ -43,14 +43,6 @@ class EventsContainer extends Component {
         })
     };
 
-    likeEvent = () => {
-        let updatedLike = !this.state.favorite
-        this.setState({
-            favorite: updatedLike
-        })
-        return this.favorite
-    };
-
     handleDelete = (id) => {
         const options = {
             method: "DELETE"
@@ -60,6 +52,20 @@ class EventsContainer extends Component {
             .then(r => r.json())
             .then(this.fetchEvents)
     };
+
+    likeEvent = (id) => {
+        let updatedArr = this.state.events.map(event => {
+            if (event.id === id) {
+                event.favorite = !event.favorite
+                return (event)
+            }
+            else { return event }
+        })
+        this.setState({
+            events: updatedArr
+        })
+    }
+
 
     handleLike = (id) => {
         const options = {
@@ -79,7 +85,7 @@ class EventsContainer extends Component {
                 console.log(e);
                 this.likeEvent(id)
             })
-    }
+    };
 
 
     render() {
