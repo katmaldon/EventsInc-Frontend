@@ -9,8 +9,7 @@ class EventsContainer extends Component {
 
     state = {
         events: [],
-        search: '',
-        // favorite: false
+        search: ''
     }
 
     fetchEvents = () => {

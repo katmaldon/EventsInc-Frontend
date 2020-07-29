@@ -3,8 +3,11 @@
 
 .App {
     text-align: center;
+    display: inline-block;
   }
-
+img.card_image {
+    max-height: 100px;
+}
   .navbar {
   background-color: aliceblue;
   min-height: 20px;
@@ -18,7 +21,7 @@
   text-shadow: 1px 2px rgb(0, 110, 129);
   color: darkblue;
 }
-  .Header {
+  #Header {
     background-color: white;
     display: block;
     display: flex;
@@ -27,6 +30,7 @@
     margin: 50px;
     font-size: 12px;
     color: magenta;
+    
   }
 
   .body {
@@ -79,7 +83,7 @@
 
   .event_cards {
     align-items: center;
-    background-color: rgb(255, 251, 0);
+    background-color: rgb255 129 0 / 40%;
     display: block;
     margin-left: auto;
     margin-right: auto;

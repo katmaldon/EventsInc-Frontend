@@ -34,6 +34,8 @@ class EventForm extends React.Component {
                 image_url: this.state.image_url,
                 date: this.state.date,
                 time: this.state.time,
+                location: this.state.location,
+                price: this.state.price,
                 event_url: this.state.event_url,
                 user_id: this.state.user_id
             }),
@@ -41,6 +43,17 @@ class EventForm extends React.Component {
             .then((r) => r.json())
             .then((newEvent) => {
                 this.props.addEvent(newEvent);
+                this.setState({
+                    name: "",
+                    event_type: "",
+                    image_url: "",
+                    date: "",
+                    time: "",
+                    location: "",
+                    price: "",
+                    event_url: "",
+                    user_id: null 
+                })
             });
     };
 
