@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './Components/Header'
+// import Login from './Components/Login'
 import EventsContainer from './Containers/EventsContainer'
 import NavBar from './Components/NavBar'
 import { Route, Switch } from "react-router-dom";
@@ -20,6 +21,8 @@ function App() {
                 <Route path='/about' render={() => <div> About </div>} />
                 <Route path='/' render={() => <div> eve </div>} />
             </Switch>
+            {/* <Login/> */}
+            <footer>Kat@Mohamed</footer>
         </div>
     );
 }

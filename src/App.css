@@ -3,10 +3,16 @@
 
 .App {
     text-align: center;
-    display: inline-block;
+    justify-content: center;
+    background-image: url(https://visiteurope.com/wp-content/uploads/Events4.jpg);
   }
-img.card_image {
+img {
     max-height: 100px;
+    max-width: 250px;
+}
+img#header {
+    max-height: max-content;
+    max-width: -webkit-fill-available;
 }
   .navbar {
   background-color: aliceblue;
@@ -91,13 +97,15 @@ img.card_image {
     margin: 10px;
     grid-gap: 8px;
     grid-template-columns: auto auto auto;
+    opacity: 0.7;
   }
 
   .events_form {
-    background-color: rgb(0, 255, 255);
+    background-color: #eec553;
     margin: 10px;
     padding: 20px;
     align-items: center;
+    opacity: 0.7;
   }
 
   .todo_div {
@@ -120,13 +128,15 @@ img.card_image {
   }
 
   .search {
-    background-color: rgb(221, 255, 71);
-
+    background-color: #eec553;
     text-align: center;
     position: relative;
     display: block;
     margin: 10px;
     padding: 2rem;
+    fill-opacity: inherit;
+    opacity: 0.7;
+
   }
 
   .searchWord {
@@ -140,16 +150,45 @@ img.card_image {
     font-size: 3rem;
   }
 
-  .card {
+.card {
     text-align: center;
-    color: rgb(7, 67, 95);
-  }
-
-  .card_title {
+    color: aliceblue;
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    height: 17rem;
+    display: inline-grid;
+    margin: .5rem .5rem;
+    box-shadow: 3px 4px #e04b52;
+    box-shadow: 0 0 black;
+    background-color: #eec553;
+    text-shadow: 1px 2px 0 black;
+}
+form.ui.form.new_event {
+    padding: 1rem;
+    width: stretch;
+    height: auto;
+    display: inline-block;
+    background: #515DA2;
+    opacity: 0.7;
+    margin: .5rem .5rem;
+}
+/* form.new_event {
+    padding: 1rem;
+    width: stretch;
+    height: auto;
+    display: inline-grid;
+    background: #515DA2;
+    opacity: .87
+    margin: .5rem .5rem;
+} */
+/*  */
+  /* .card_title {
     text-align: center;
     color: rgb(7, 67, 95);
     text-shadow: 1px 2px #8ac8e7;
-  }
+  } */
 
   .App-link {
     color: #61dafb;
