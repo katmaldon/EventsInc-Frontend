@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Form } from 'semantic-ui-react'
 
 class EventForm extends React.Component {
-    // toggle the card front will be Add Event back will the form
     state = {
         showForm: false,
         name: "",
@@ -15,7 +14,6 @@ class EventForm extends React.Component {
         event_url: "",
         user_id: null //pass in user_id automatically
     };
-    
         handleSubmit = (e) => {
             e.preventDefault();
             fetch('http://localhost:3000/events', {
@@ -54,7 +52,6 @@ class EventForm extends React.Component {
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-            // value: e.target.value
         });
     };
     toggleForm = () => {
@@ -69,6 +66,114 @@ class EventForm extends React.Component {
             </>
         )
     }
+
+    renderBack = () => {
+        return (
+            <>
+                <div>
+                    <Form className="new_event" onSubmit={this.handleSubmit}>
+                        <Form.Group unstackable widths={2}>
+                            <Form.Input
+                                label="Name: "
+                                name="name"
+                                placeholder='Name..'
+                                valueOf={this.state.value}
+                                onChange={this.handleChange}
+                                />
+                            <Form.Input
+                            label="Type: "
+                            name="type"
+                            placeholder='Type..'
+                            valueOf={this.state.event_type}
+                            onChange={this.handleChange}
+                            />
+                            </Form.Group>
+                        <Form.Group widths={2}>
+                            <Form.Input
+                                label="Image: "
+                                name="image_url"
+                                placeholder='Image..'
+                                valueOf={this.state.image_url}
+                                onChange={this.handleChange}
+                            />
+                            <Form.Input
+                                label='Date: '
+                                placeholder='Date..'
+                                name="date"
+                                valueOf={this.state.date}
+                                onChange={this.handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group widths={2}>
+                            <Form.Input
+                                label="Time: "
+                                placeholder='Time..'
+                                name="time"
+                                valueOf={this.state.time}
+                                onChange={this.handleChange}
+                            />
+                            <Form.Input
+                                label="Location: "
+                                name="location"
+                                placeholder='Location..'
+                                valueOf={this.state.location}
+                                onChange={this.handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group widths={2}>
+                            <Form.Input
+                                label="Price: "
+                                name="price"
+                                placeholder='Price..'
+                                valueOf={this.state.price}
+                                onChange={this.handleChange}
+                            />
+                            <Form.Input
+                                label="Event_url: "
+                                name="event_url"
+                                placeholder='Event_url...'
+                                valueOf={this.state.event_url}
+                                onChange={this.handleChange}
+                            /><br></br>
+                        <Button type='submit'>Add Event</Button>
+                        </Form.Group>
+                    </Form>
+            </div>
+        </>
+        )
+    }
+
+    render() {
+        console.log(this.state);
+        return (
+            <Form.Field>
+                <div className="events_form" >
+                    {this.renderFront()}
+                    {this.state.showForm ? this.renderBack() : null}
+                </div>
+            </Form.Field>
+
+        );
+    };
+}
+
+export default EventForm;
+
+   // renderBack = ( ) => {
+    //     return (
+    //         <Form>
+    //             <Form.Group unstackable widths={2}>
+    //                 <Form.Input label='Name' placeholder='Name....' valueOf={this.state.name} onChange={this.handleChange}/>
+    //                 <Form.Input label='Type' placeholder='event_type...' />
+    //             </Form.Group>
+    //             <Form.Group widths={2}>
+    //                 <Form.Input label='Price' placeholder='Price....' />
+    //                 <Form.Input label='Event_url' placeholder='Event_url...' />
+    //             </Form.Group>
+    //             <Button type='submit'>Submit</Button>
+    //         </Form>
+    //     )
+    // }
     // renderBack = () => {
     //     return (
     //         <section>
@@ -162,112 +267,3 @@ class EventForm extends React.Component {
     //         </ section>
     //     )
     // }
-    renderBack = () => {
-        return (
-            <>
-                <div>
-                    <Form className="new_event" onSubmit={this.handleSubmit}>
-                        <Form.Group unstackable widths={2}>
-                            <Form.Input
-                                label="Name: "
-                                name="name"
-                                placeholder='Name..'
-                                valueOf={this.state.value}
-                                onChange={this.handleChange}
-                                />
-                            <Form.Input
-                            label="Type: "
-                            name="type"
-                            placeholder='Type..'
-                            valueOf={this.state.event_type}
-                            onChange={this.handleChange}
-                            />
-                            </Form.Group>
-                        <Form.Group widths={2}>
-                            <Form.Input
-                                label="Image: "
-                                name="image_url"
-                                placeholder='Image..'
-                                valueOf={this.state.image_url}
-                                onChange={this.handleChange}
-                            />
-                            <Form.Input
-                                label='Date: '
-                                placeholder='Date..'
-                                name="date"
-                                valueOf={this.state.date}
-                                onChange={this.handleChange}
-                            />
-                        </Form.Group>
-                        <Form.Group widths={2}>
-                            <Form.Input
-                                label="Time: "
-                                placeholder='Time..'
-                                name="time"
-                                valueOf={this.state.time}
-                                onChange={this.handleChange}
-                            />
-                            <Form.Input
-                                label="Location: "
-                                name="location"
-                                placeholder='Location..'
-                                valueOf={this.state.location}
-                                onChange={this.handleChange}
-                            />
-                        </Form.Group>
-                        <Form.Group widths={2}>
-                            <Form.Input
-                                label="Price: "
-                                name="price"
-                                placeholder='Price..'
-                                valueOf={this.state.price}
-                                onChange={this.handleChange}
-                            />
-                            <Form.Input
-                                label="Event_url: "
-                                name="event_url"
-                                placeholder='Event_url...'
-                                valueOf={this.state.event_url}
-                                onChange={this.handleChange}
-                            /><br></br>
-                        <Button type='submit'>Submit</Button>
-                        </Form.Group>
-                    </Form>
-            </div>
-        </>
-        )
-    }
-
-    // renderBack = ( ) => {
-    //     return (
-    //         <Form>
-    //             <Form.Group unstackable widths={2}>
-    //                 <Form.Input label='Name' placeholder='Name....' valueOf={this.state.name} onChange={this.handleChange}/>
-    //                 <Form.Input label='Type' placeholder='event_type...' />
-    //             </Form.Group>
-    //             <Form.Group widths={2}>
-    //                 <Form.Input label='Price' placeholder='Price....' />
-    //                 <Form.Input label='Event_url' placeholder='Event_url...' />
-    //             </Form.Group>
-    //             <Button type='submit'>Submit</Button>
-    //         </Form>
-    //     )
-    // }
-
-    render() {
-        console.log(this.state);
-        return (
-            <Form.Field>
-                <div className="events_form" >
-                    {this.renderFront()}
-                    {this.state.showForm ? this.renderBack() : null}
-                </div>
-            </Form.Field>
-
-        );
-    };
-}
-
-export default EventForm;
-
-

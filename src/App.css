@@ -9,6 +9,7 @@
 img {
     max-height: 100px;
     max-width: 250px;
+    opacity: 1;
 }
 img#header {
     max-height: max-content;

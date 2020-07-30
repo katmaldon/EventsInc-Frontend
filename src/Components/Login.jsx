@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
+import { Button, Divider, Form, Grid, Segment, Checkbox } from 'semantic-ui-react'
 
 const Login = () => (
     <Segment placeholder>
@@ -18,6 +18,9 @@ const Login = () => (
                         label='Password'
                         type='password'
                     />
+                    <Form.Field>
+                        <Checkbox label='Remember Me' />
+                    </Form.Field>
                     <Button content='Login' primary />
                 </Form>
             </Grid.Column>
