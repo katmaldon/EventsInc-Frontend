@@ -33,7 +33,7 @@ class Event extends Component   {
                         <p>Price: ${this.props.price} </p>
                         <p>Event details: <a href={this.props.event_url}>{this.props.event_url}</a></p>
                     </div>
-                    <Button color='red' onClick={() => this.props.handleDelete(this.props.id)} >Delete event</Button>
+                    <Button classname="deleteBtn" color='red' onClick={() => this.props.handleDelete(this.props.id)} >Delete event</Button>
                     {/* <button onClick={() => this.props.handleDelete(this.props.id)}>Delete event</button> */}
                 </div>
                 </Card>

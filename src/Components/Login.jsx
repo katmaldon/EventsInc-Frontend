@@ -3,6 +3,7 @@ import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
 
 const Login = () => (
     <Segment placeholder>
+    <div className="login_form">
         <Grid columns={2} relaxed='very' stackable>
             <Grid.Column>
                 <Form>
@@ -28,6 +29,7 @@ const Login = () => (
                 <Button content='Sign up' icon='signup' size='big'/>
             </Grid.Column>
         </Grid>
+        </div>
         <br></br>
         <br></br>
         <br></br>
