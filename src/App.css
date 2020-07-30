@@ -14,6 +14,16 @@ img#header {
     max-height: max-content;
     max-width: -webkit-fill-available;
 }
+.ui.comments {
+    background-color: #e07b4b91;
+    margin-bottom: 30px;
+}
+h6 {
+    font-size: -webkit-xxx-large;
+}
+footer {
+    padding-top: 25px;
+}
   .navbar {
   background-color: aliceblue;
   min-height: 20px;
@@ -73,7 +83,7 @@ img#header {
   }
 
   p {
-    color: rgb(199, 0, 139);
+    color: rgb(0 129 46);
     margin-left: 0px;
   }
 

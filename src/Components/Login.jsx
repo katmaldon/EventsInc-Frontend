@@ -18,17 +18,15 @@ const Login = () => (
                         label='Password'
                         type='password'
                     />
-
                     <Button content='Login' primary />
                 </Form>
             </Grid.Column>
-
+            <Divider vertical>Don't have an account?Please</Divider>
             <Grid.Column verticalAlign='middle'>
-                <Button content='Sign up' icon='signup' size='big' />
+                <Button content='Sign up' icon='signup' size='big'/>
             </Grid.Column>
         </Grid>
 
-        <Divider vertical>Or</Divider>
     </Segment>
 )
 

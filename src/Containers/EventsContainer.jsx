@@ -5,8 +5,6 @@ import Search from '../Components/Search';
 
 
 class EventsContainer extends Component {
-
-
     state = {
         events: [],
         search: ''
@@ -88,9 +86,7 @@ class EventsContainer extends Component {
 
 
     render() {
-
-        const filteredEvents = this.state.events.filter(event => event.name.toLowerCase().includes(this.state.search.toLowerCase()))
-
+    const filteredEvents = this.state.events.filter(event => event.name.toLowerCase().includes(this.state.search.toLowerCase()))
         return (
             <div>
                 <Search
