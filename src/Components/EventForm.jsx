@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form } from 'semantic-ui-react'
 
 class EventForm extends React.Component {
-    // toggle the card front will be Add Event back will the form
+
     state = {
         showForm: false,
         name: "",
@@ -13,9 +13,9 @@ class EventForm extends React.Component {
         location: "",
         price: "",
         event_url: "",
-        user_id: null //pass in user_id automatically
-    };
-    
+        user_id: null
+    }
+
         handleSubmit = (e) => {
             e.preventDefault();
             fetch('http://localhost:3000/events', {
@@ -54,7 +54,6 @@ class EventForm extends React.Component {
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-            // value: e.target.value
         });
     };
     toggleForm = () => {
@@ -64,104 +63,12 @@ class EventForm extends React.Component {
         return (
             <>
                 <div className="card_title" onClick={this.toggleForm}>
-                    <h3>Add New Event</h3>
+                    <button className="button" >Add Event</button>
                 </div>
             </>
         )
     }
-    // renderBack = () => {
-    //     return (
-    //         <section>
-    //             <div className="events_form">
-    //                 <form className="new_event" onSubmit={this.handleSubmit}>
 
-    //                     <label htmlFor="name" >Name:
-    //             <input
-    //                             type="text"
-    //                             name="name"
-    //                             id="name"
-    //                             value={this.state.name}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-    //                     <label htmlFor="name" >Type:
-    //             <input
-    //                             type="text"
-    //                             name="event_type"
-    //                             id="event_type"
-    //                             value={this.state.event_type}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-    //                     <label htmlFor="image" >Image:
-    //             <input
-    //                             type="text"
-    //                             name="image_url"
-    //                             id="image_url"
-    //                             value={this.state.image_url}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-    //                     <label htmlFor="name" >Date:
-    //             <input
-    //                             type="text"
-    //                             name="date"
-    //                             id="date"
-    //                             value={this.state.date}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-    //                     <label htmlFor="name" >Time:
-    //             <input
-    //                             type="text"
-    //                             name="time"
-    //                             id="time"
-    //                             value={this.state.time}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-    //                     <label htmlFor="name" >Location:
-    //             <input
-    //                             type="text"
-    //                             name="location"
-    //                             id="location"
-    //                             value={this.state.location}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-    //                     <label htmlFor="name" >Price: $
-    //             <input
-    //                             type="text"
-    //                             name="price"
-    //                             id="price"
-    //                             value={this.state.price}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-    //                     <label htmlFor="event_url" >URL:
-    //             <input
-    //                             type="text"
-    //                             name="event_url"
-    //                             id="event-url"
-    //                             value={this.state.event_url}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
-
-
-    //                     <input type="submit" value="Create event" />
-    //                 </form><br></br><br></br>
-    //             </div>
-    //         </ section>
-    //     )
-    // }
     renderBack = () => {
         return (
             <>
@@ -230,29 +137,13 @@ class EventForm extends React.Component {
                                 valueOf={this.state.event_url}
                                 onChange={this.handleChange}
                             /><br></br>
-                        <Button type='submit'>Submit</Button>
+                        <Button className="button" type='submit'>Create event</Button>
                         </Form.Group>
                     </Form>
             </div>
         </>
         )
     }
-
-    // renderBack = ( ) => {
-    //     return (
-    //         <Form>
-    //             <Form.Group unstackable widths={2}>
-    //                 <Form.Input label='Name' placeholder='Name....' valueOf={this.state.name} onChange={this.handleChange}/>
-    //                 <Form.Input label='Type' placeholder='event_type...' />
-    //             </Form.Group>
-    //             <Form.Group widths={2}>
-    //                 <Form.Input label='Price' placeholder='Price....' />
-    //                 <Form.Input label='Event_url' placeholder='Event_url...' />
-    //             </Form.Group>
-    //             <Button type='submit'>Submit</Button>
-    //         </Form>
-    //     )
-    // }
 
     render() {
         console.log(this.state);

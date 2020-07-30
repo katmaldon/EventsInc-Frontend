@@ -17,15 +17,31 @@ const Login = () => (
                         iconPosition='left'
                         label='Password'
                         type='password'
-                    />
+                        placeholder='Password'
+                    /><br></br>
                     <Button content='Login' primary />
                 </Form>
-            </Grid.Column>
-            <Divider vertical>Don't have an account?Please</Divider>
+            </Grid.Column><br></br>
+            <Divider vertical>Don't have an account yet?</Divider>
+            <br></br>
             <Grid.Column verticalAlign='middle'>
                 <Button content='Sign up' icon='signup' size='big'/>
             </Grid.Column>
         </Grid>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br><br></br>
 
     </Segment>
 )

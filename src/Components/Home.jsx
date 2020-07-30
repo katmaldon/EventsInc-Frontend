@@ -1,9 +1,13 @@
 import React from 'react';
 
 const Home = () => {
-    return (
-        <h6>Welcome to Events</h6>
-    )
-}
+
+            return (
+                <div>
+                    <h1> USER PROFILE </h1>
+                </div>
+            );
+        }
+
 
 export default Home;

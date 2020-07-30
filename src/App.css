@@ -5,7 +5,14 @@
     text-align: center;
     justify-content: center;
     background-image: url(https://visiteurope.com/wp-content/uploads/Events4.jpg);
-  }
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: white
+}
+
+
 img {
     max-height: 100px;
     max-width: 250px;
@@ -14,15 +21,13 @@ img#header {
     max-height: max-content;
     max-width: -webkit-fill-available;
 }
-.ui.comments {
-    background-color: #e07b4b91;
-    margin-bottom: 30px;
-}
+
 h6 {
     font-size: -webkit-xxx-large;
 }
 footer {
     padding-top: 25px;
+    color: white;
 }
   .navbar {
   background-color: aliceblue;
@@ -32,11 +37,13 @@ footer {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400 ;
-  text-shadow: 1px 2px rgb(0, 110, 129);
+  text-shadow: 1px 1px rgb(0, 110, 129);
   color: darkblue;
+  hover:
 }
+
   #Header {
     background-color: white;
     display: block;
@@ -44,9 +51,7 @@ footer {
     align-items: center;
     justify-content: space-around;
     margin: 50px;
-    font-size: 12px;
-    color: magenta;
-    
+
   }
 
   .body {
@@ -104,10 +109,11 @@ footer {
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    margin: 10px;
+    margin: 5px;
     grid-gap: 8px;
     grid-template-columns: auto auto auto;
-    opacity: 0.7;
+    opacity: .9;
+
   }
 
   .events_form {
@@ -116,6 +122,10 @@ footer {
     padding: 20px;
     align-items: center;
     opacity: 0.7;
+  }
+
+  .new_event {
+      opacity: .9
   }
 
   .todo_div {
@@ -137,22 +147,31 @@ footer {
     color: rgb(7, 67, 95);
   }
 
+  .button {
+    transition-duration: 0.4s;
+  }
+
+  .button:hover {
+    background-color: #17ffec; /* Green */
+    color: black;
+  }
+
   .search {
     background-color: #eec553;
     text-align: center;
     position: relative;
     display: block;
-    margin: 10px;
-    padding: 2rem;
+    margin: 20px;
+    padding: 30px;
     fill-opacity: inherit;
-    opacity: 0.7;
+    opacity: 0.8;
 
   }
 
   .searchWord {
     text-align: center;
     width: 100%;
-    border: 3px solid #ff1e00;
+    border: 3px solid #ff0000;
     padding: 5px;
     height: 3rem;
     border-radius: 5px;
@@ -174,15 +193,44 @@ footer {
     box-shadow: 0 0 black;
     background-color: #eec553;
     text-shadow: 1px 2px 0 black;
+
 }
+
+.about {
+    text-align: center;
+    color: white;
+    text-align: center;
+    border: grey solid 1px;
+    padding: 3rem;
+    width: 50rem;
+    height: auto;
+    display: inline-grid;
+    margin: .5rem .5rem;
+    background-color: #ff3535d8;
+    opacity: .8;
+    font-size: 24px;
+    text-shadow: 1px 1px 0 rgb(255, 255, 0);
+
+}
+.events_form.button:hover {
+    background-color: #17ffec; /* Green */
+    color: black;
+}
+
 form.ui.form.new_event {
     padding: 1rem;
     width: stretch;
     height: auto;
     display: inline-block;
     background: #515DA2;
-    opacity: 0.7;
+    opacity: 1;
+    color: white;
+    text-shadow: 1px 1px 0 black;
     margin: .5rem .5rem;
+}
+    form.ui.form.new_event.button:hover {
+        background-color: #17ffec; /* Green */
+        color: black;
 }
 /* form.new_event {
     padding: 1rem;
