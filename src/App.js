@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import About from './Components/About';
 import Login from './Components/Login';
-import Signup from './Components/SignUp'
+import SignUp from './Components/SignUp'
 import EventsContainer from './Containers/EventsContainer';
 import UserContainer from './Containers/UserContainer'
 import NavBar from './Components/NavBar';
@@ -67,13 +67,13 @@ class App extends Component {
                 />
                 <Header />
                 <Switch>
-                    <Route path='/login' render={() => <Login setUser={this.setUser} />} />
-                    <Route path='/signup' render={() => <Signup setUser={this.setUser} />} />
+                    <Route path='/login' component={Login} />} />
+                    <Route path='/signup' component={SignUp}/>
                     {/* <Route path='/events/:id' render={() => <div> event </div>} /> */}
                     <Route path='/events' render={() => <EventsContainer />} />
                     <Route path='/user' render={() => <UserContainer />} />
                     <Route path='/about' render={() => <About />} />
-                    <Route path='/' render={() => <Home />} />
+                    <Route path='/' component={Home} />
                     <Route render={() => <h1>WHOOPS! Wrong way...</h1>} />
                 </Switch>
                 <footer>©2020 MoKat Productions</footer>

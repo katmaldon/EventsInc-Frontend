@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
+import { Button, Divider, Form,  Segment } from 'semantic-ui-react'
 
 class Login extends Component {
 
@@ -46,11 +46,25 @@ class Login extends Component {
         }
     }
 
-    render() {
+    handleSingnup = () => {
         return (
-                <Form className="login_form" onSubmit={this.handleSubmit}>
+            this.props.history.push('/SignUp')
+        )
+    }
+    handleLogin  = () => {
+        return (
+            this.props.history.push('/')
+        )
+    }
+    
+    render() {
+        console.log(this.props.history);
+        return (
+            <div className="login_form">
+                <Form  onSubmit={this.handleSubmit}>
+                    <div>
                     <Divider vertical><h2>Welcome back! It's showtime, baby.</h2></Divider>
-                            <ul>
+                            {/* <ul> */}
                             <Form.Input
                                 name="name"
                                 label='Username'
@@ -67,13 +81,16 @@ class Login extends Component {
                                 label='Password'
                                 placeholder='Password123...NOT!'
                             />
-                            <Button classname="button" content='log in' primary />
+                        <Button classname="button" content='log in' primary onClick={this.handleLogin}/>
                             <br></br><br></br>
                     <Divider vertical>Don't have an account yet?</Divider>
-                        <Button className="button" content='Sign up' icon='signup' size='big' />
-                        </ul>
+                    </div>
+                        {/* </ul> */}
             </Form>
-
+                    <div>
+                    <Button className="button" onClick={this.handleSingnup} content='Sign up' icon='signup' size='big' />
+                    </div>
+            </div>
         )
     };
 };
