@@ -75,6 +75,11 @@ class EventForm extends React.Component {
                 <div>
                     <Form className="new_event" onSubmit={this.handleSubmit}>
                         <Form.Group unstackable widths={2}>
+                            <select class="ui dropdown">
+                            <option value="">Type of event</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                            </select>
                             <Form.Input
                                 label="Name: "
                                 name="name"
@@ -82,6 +87,7 @@ class EventForm extends React.Component {
                                 valueOf={this.state.value}
                                 onChange={this.handleChange}
                                 />
+
                             <Form.Input
                             label="Type: "
                             name="type"
