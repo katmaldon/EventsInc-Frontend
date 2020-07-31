@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import EventsCollection from '../Components/EventsCollection';
 import EventForm from '../Components/EventForm';
 import Search from '../Components/Search';
 
 
-class EventsContainer extends Component {
+class EventsContainer extends React.Component {
     state = {
         events: [],
         search: ''

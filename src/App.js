@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import About from './Components/About';
 import Login from './Components/Login';
-import Signup from './Components/Signup'
+import Signup from './Components/SignUp'
 import EventsContainer from './Containers/EventsContainer';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';

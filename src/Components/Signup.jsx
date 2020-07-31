@@ -1,58 +1,40 @@
+
+
+
+
+
 import React from 'react'
+import { Form } from 'semantic-ui-react'
 
-class Signup extends React.Component {
+const SignUp = () => (
+    <Form>
+        <Form.Group>
+            <Form.Input label='First name' placeholder='First Name' width={6} />
+            <Form.Input label='Middle Name' placeholder='Middle Name' width={4} />
+            <Form.Input label='Last Name' placeholder='Last Name' width={6} />
+        </Form.Group>
+        <Form.Group>
+            <Form.Input placeholder='2 Wide' width={2} />
+            <Form.Input placeholder='12 Wide' width={12} />
+            <Form.Input placeholder='2 Wide' width={2} />
+        </Form.Group>
+        <Form.Group>
+            <Form.Input placeholder='8 Wide' width={8} />
+            <Form.Input placeholder='6 Wide' width={6} />
+            <Form.Input placeholder='2 Wide' width={2} />
+        </Form.Group>
+    </Form>
+)
 
-  state = {
-    name: "",
-    password: "",
-    passwordConfirmation: ""
-  }
+export default SignUp
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
 
-    if (this.state.password === this.state.passwordConfirmation){
-      fetch("http://localhost:3000/api/v1/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({name: this.state.name, password: this.state.password})
-      })
-      .then(res => res.json())
-      .then(response => {
-        if(response.errors){
-          alert(response.errors)
-        } else {
-          this.props.setUser(response)
-        }
-      })
-    } else {
-      alert("Passwords must match. Please try again.")
-    }
 
-  }
-
-  render(){
-    return (
-      <div className="center-form">
-        <form className="auth-form" onSubmit={this.handleSubmit}>
-          <input name="name" value={this.state.name} onChange={this.handleChange}placeholder="name"/>
-          <input name="password" value={this.state.password} type="password"  onChange={this.handleChange}placeholder="password"/>
-          <input name="passwordConfirmation" value={this.state.passwordConfirmation} type="password"  onChange={this.handleChange}placeholder="confirm password"/>
-          <button className="login" type="submit">Sign up</button>
-        </form>
-      </div>
-    )
-  }
-
-}
-
-export default Signup;
+/*
+    t.string "name"
+    t.string "image_url"
+    t.integer "age"
+    t.string "location"
+    t.string "bio"
+*/

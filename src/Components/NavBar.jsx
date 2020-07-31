@@ -11,6 +11,7 @@ const NavBar = () => {
             <Link to="/events">events</Link>
             <Link to="/about">about</Link>
             {/* <button className="logoutBtn" onClick={props.logout}><span role="img" aria-label="user-controls">{props.currentUser ? props.currentUser.name : "👤"} ⬇</span></button> */}
+
         </div>
     )
 }
