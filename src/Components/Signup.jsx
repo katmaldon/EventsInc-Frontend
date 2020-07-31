@@ -1,40 +1,102 @@
+import React, { Component } from 'react'
+import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
+
+
+class SignUp extends Component {
+
+    state = {
+        name: "",
+        password: "",
+        passwordConfirmation: ""
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+
+        const options = {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+            body: JSON.stringify({
+                name: this.state.name,
+                password: this.state.password
+            })
+        }
+
+        if (this.state.password === this.state.passwordConfirmation) {
+            fetch("http://localhost:3000/api/v1/signup", options)
+                .then(res => res.json())
+                .then(response => {
+                    if (response.errors) {
+                        alert(response.errors)
+                    }
+                    else {
+                        this.props.setUser(response)
+                    }
+                })
+        }
+        else {
+            alert("Passwords need to match and are case-sensitive.")
+        }
+    }
+
+    render() {
+        return (
+            <Segment placeholder>
+                <div className="signup_form">
+                    <Grid columns={2} relaxed='very' stackable>
+                        <Grid.Column>
+                        <Divider vertical><h2>Ready to join the EventsInc community?</h2></Divider>
+                            <Form>
+                                <Form.Input
+                                    icon='user'
+                                    iconPosition='left'
+                                    label='Username'
+                                    placeholder='Pick a name, any name...'
+                                /><br></br>
+                                <Form.Input
+                                    icon='lock'
+                                    iconPosition='left'
+                                    label='Password'
+                                    type='password'
+                                    placeholder='Password123...NOT!'
+                                /><br></br>
+                                <Form.Input
+                                    icon='lock'
+                                    iconPosition='left'
+                                    label='Confirm password'
+                                    type='password'
+                                    placeholder='One more time...'
+                                /><br></br>
+
+                            <Button content='Sign up' icon='signup' size='big' />
+
+
+                            </Form>
+                        </Grid.Column>
+                        <Grid.Column verticalAlign='middle'>
+                        </Grid.Column>
+                    </Grid>
+                </div>
+                <br></br><br></br>
 
 
 
+            </Segment>
+
+        )
+    };
+};
 
 
-import React from 'react'
-import { Form } from 'semantic-ui-react'
 
-const SignUp = () => (
-    <Form>
-        <Form.Group>
-            <Form.Input label='First name' placeholder='First Name' width={6} />
-            <Form.Input label='Middle Name' placeholder='Middle Name' width={4} />
-            <Form.Input label='Last Name' placeholder='Last Name' width={6} />
-        </Form.Group>
-        <Form.Group>
-            <Form.Input placeholder='2 Wide' width={2} />
-            <Form.Input placeholder='12 Wide' width={12} />
-            <Form.Input placeholder='2 Wide' width={2} />
-        </Form.Group>
-        <Form.Group>
-            <Form.Input placeholder='8 Wide' width={8} />
-            <Form.Input placeholder='6 Wide' width={6} />
-            <Form.Input placeholder='2 Wide' width={2} />
-        </Form.Group>
-    </Form>
-)
 
 export default SignUp
-
-
-
-
-/*
-    t.string "name"
-    t.string "image_url"
-    t.integer "age"
-    t.string "location"
-    t.string "bio"
-*/

@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class Todo extends React.Component {
-
-    // make table for todos rather than cards
+class Todo extends Component {
 
     render() {
         return (
-            <li className="cards__item">
-                <div className="card">
-                    <div className="card__content">
-                        <div className="card__title">{this.props.todo.date}</div>
-                        <p> className="card__text">{this.props.todo.item}</p>
+                <div className="todo_list">
+                    <div className="todo_content">
+                        <div className="todo_date">10/27/2021</div>
+                        <p className="todo_item">Make costume</p>
+                        <button onClick={() => this.handleCompleted(this.id)}>{this.completed ? "DONE" : "Completed?"}</button>
                     </div>
                 </div>
-            </li>
         );
     }
 

@@ -50,6 +50,7 @@ class Login extends Component {
         return (
             <Segment placeholder>
                 <div className="login_form">
+                <Divider vertical><h2>Welcome back! Showtime, baby.</h2></Divider>
                     <Grid columns={2} relaxed='very' stackable>
                         <Grid.Column>
                             <Form>
@@ -58,7 +59,7 @@ class Login extends Component {
                                     iconPosition='left'
                                     label='Username'
                                     placeholder='Pick a name, any name...'
-                                />
+                                /><br></br>
                                 <Form.Input
                                     icon='lock'
                                     iconPosition='left'
@@ -77,27 +78,12 @@ class Login extends Component {
                     </Grid>
                 </div>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-
-
             </Segment>
-
         )
     };
 };
 
-    export default Login;
+export default Login;
 
 
 

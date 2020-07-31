@@ -18,6 +18,9 @@ img {
     max-height: 150px;
     max-width: 250px;
     opacity: 1;
+    border-width: 6px;
+    border-color: white;
+    border-style: solid;
 }
 
 img#header {
@@ -95,23 +98,29 @@ h4 {
 }
 
 p {
-    color: rgb(0 129 46);
-    margin-left: 0px;
+color: #057fd0;
+
+}
+
+.about p {
+    color: white;
+    text-shadow: 1px 1px #057fd0;
 }
 
 .user_card {
-    background-color: rgb(255, 145, 0);
+    align-items: center;
     display: block;
-    margin-left: 0px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    background-color: #0074c1;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    display: block;
     padding: 15px;
 }
 
 .event_cards {
   align-items: center;
-  /* background-color: rgb(255, 129, 0); */
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -138,23 +147,34 @@ p {
   opacity: 0.7;
 }
 
+.new_todo {
+    padding: 1rem;
+    display: block;
+    align-items: center;
+    width: 30%;
+    height: auto;
+    margin: auto;
+    display: inline-block;
+    background: #071768;
+    opacity: 0.85;
+    color: white;
+    text-shadow: 1px 1px 0 white;
+    margin: 0.5rem 0.5rem;
+}
+
+
 .new_event {
     opacity: 0.9;
 }
 
-.todo_div {
+.todo_list {
     background-color: rgb(206, 206, 255);
+    width: 65%;
     margin: 10px;
     padding: 20px;
     align-items: center;
 }
 
-.todo_form {
-    background-color: rgb(255, 191, 221);
-    margin: 10px;
-    padding: 20px;
-    align-items: center;
-}
 
 .table {
     text-align: left;
@@ -177,7 +197,7 @@ p {
     width: 100%;
     border: 3px solid #ff0000;
     padding: 5px;
-    height: 3rem;
+    height: 5rem;
     border-radius: 5px;
     outline: none;
     font-size: 3rem;
@@ -205,10 +225,10 @@ p {
     text-align: center;
     border: grey solid 1px;
     padding: 10px;
-    width: 70%;
+    width: 65%;
     height: auto;
     display: inline-grid;
-    margin: 50px;
+    margin: 0.5rem 0.5rem;
     background-color: #4fc1a5;
     opacity: 0.85;
     font-size: 24px;
@@ -232,13 +252,29 @@ p {
     text-shadow: 1px 1px 0 rgb(255, 255, 0);
 }
 
+.signup_form {
+    text-align: center;
+    color: white;
+    text-align: center;
+    border: grey solid 1px;
+    padding: 3rem;
+    width: 50rem;
+    height: auto;
+    display: inline-grid;
+    margin: 0.5rem 0.5rem;
+    background-color: #ff9a79;
+    opacity: 0.9;
+    font-size: 20px;
+    text-shadow: 1px 1px 0 rgb(255, 255, 0);
+}
+
 form.ui.form.new_event {
     padding: 1rem;
     width: stretch;
     height: auto;
     display: inline-block;
-    background: #515da2;
-    opacity: 1;
+    background: #8d1919;
+    opacity: 0.85;
     color: white;
     text-shadow: 1px 1px 0 black;
     margin: 0.5rem 0.5rem;
@@ -249,12 +285,23 @@ form.ui.form.new_event {
     color: black;
 }
 
+.events_form {
+    background-color:rgb(255, 129, 0);
+    text-align: center;
+    position: relative;
+    display: block;
+    margin: 23px;
+    padding: 15px;
+    fill-opacity: inherit;
+    opacity: 0.9;
+}
+
 .button {
     box-shadow: 0px 1px 0px 0px #f0f7fa;
     background: linear-gradient(to bottom, rgb(241 235 167) 5%, rgb(243 190 70) 100%);
     background-color: rgb(238 94 110);
     border-radius: 5px;
-    border: 1px solid #057fd0;
+    border: 1px solid white;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
@@ -289,3 +336,5 @@ button.ui.button {
 .App-link {
     color: #61dafb;
 }
+
+

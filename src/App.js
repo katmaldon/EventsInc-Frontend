@@ -10,8 +10,6 @@ import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 
 import { Route, Switch } from "react-router-dom";
-// import UserContainer from './Containers/UserContainer'
-// import TodosContainer from './Components/TodosContainer'
 
 class App extends Component {
 
@@ -61,6 +59,7 @@ class App extends Component {
         })
     }
     render() {
+        console.log("USER", this.state.currentUser)
         return (
             <div className='App'>
                 <NavBar

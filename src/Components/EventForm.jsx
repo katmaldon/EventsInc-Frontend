@@ -84,43 +84,44 @@ class EventForm extends React.Component {
 
         const { value } = this.state;
 
-        const eventOptions = [
-            {
-                key: 'Concert',
-                text: 'Concert',
-                value: 'Concert',
-            },
-            {
-                key: 'Festival',
-                text: 'Festival',
-                value: 'Festival',
-            },
-            {
-                key: 'Vacation',
-                text: 'Vacation',
-                value: 'Vacation',
-            },
-            {
-                key: 'Comedy',
-                text: 'Comedy',
-                value: 'Comedy',
-            },
-            {
-                key: 'Sports',
-                text: 'Sports',
-                value: 'Sports',
-            },
-            {
-                key: 'Musical',
-                text: 'Musical',
-                value: 'Musical',
-            },
-            {
-                key: 'Cult meeting',
-                text: 'Cult meeting',
-                value: 'Cult meeting',
-            },
-        ]
+        // const eventOptions = [
+        //     {
+        //         key: 'Concert',
+        //         text: 'Concert',
+        //         value: 'Concert',
+        //     },
+        //     {
+        //         key: 'Festival',
+        //         text: 'Festival',
+        //         value: 'Festival',
+        //     },
+        //     {
+        //         key: 'Vacation',
+        //         text: 'Vacation',
+        //         value: 'Vacation',
+        //     },
+        //     {
+        //         key: 'Comedy',
+        //         text: 'Comedy',
+        //         value: 'Comedy',
+        //     },
+        //     {
+        //         key: 'Sports',
+        //         text: 'Sports',
+        //         value: 'Sports',
+        //     },
+        //     {
+        //         key: 'Musical',
+        //         text: 'Musical',
+        //         value: 'Musical',
+        //     },
+        //     {
+        //         key: 'Cult meeting',
+        //         text: 'Cult meeting',
+        //         value: 'Cult meeting',
+        //     },
+        // ]
+
         return (
             <>
                 <div>

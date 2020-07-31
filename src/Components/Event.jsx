@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Card, Image  } from 'semantic-ui-react'
+import { Button, Card, Image } from 'semantic-ui-react'
 
-class Event extends Component   {
+class Event extends Component {
     state = { showDetails: false }
 
     toggleDetails = () => {
-        this.setState(prevState => ({showDetails: !prevState.showDetails}))
+        this.setState(prevState => ({ showDetails: !prevState.showDetails }))
     }
 
     renderFront = () => {
@@ -14,9 +14,9 @@ class Event extends Component   {
                 <Card >
                     <div className="card_title">
                         <h1>{this.props.name}</h1>
-                    <Image src={this.props.image_url} alt={this.props.name} size='medium' wrapped />
+                        <Image src={this.props.image_url} alt={this.props.name} size='medium' wrapped />
                         <p onClick={() => this.props.handleLike(this.props.id)}>{this.props.favorite ? "💚" : "♡"}</p>
-                        <Button content="Show Details" icon={{ color: 'red', name: 'delete' }} onClick={this.toggleDetails}/>
+                        <Button content="Show Details" icon={{ color: 'red', name: 'delete' }} onClick={this.toggleDetails} />
                     </div>
                 </Card>
             </>
@@ -36,19 +36,18 @@ class Event extends Component   {
                         </div>
                         <br></br>
                         <div className="delete">
-                            <Button className="deleteBtn" content="Delete" icon={{ color: 'red', name: 'delete' }} onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.props.handleDelete(this.props.id)}} />
+                            <Button className="deleteBtn" content="Delete" icon={{ color: 'red', name: 'delete' }} onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.props.handleDelete(this.props.id) }} />
                         </div>
                     </div>
                 </Card>
             </>
         )
     }
-    render () {
+    render() {
         return (
             <>
                 <div >
-                    {/* {this.renderFront()} */}
-                    { this.state.showDetails ? this.renderBack() : this.renderFront() }
+                    {this.state.showDetails ? this.renderBack() : this.renderFront()}
                 </div>
             </>
         );
@@ -56,11 +55,3 @@ class Event extends Component   {
 }
 export default Event;
 
-
-            // <div className="cards_item">
-            //     <div className="card">
-            //         <div className="card_title"><h3>{this.props.name}</h3></div>
-            //         <img src={this.props.image_url} alt={this.props.name} className="card_image" />
-            //     </div>
-            //     <br></br>
-            // </div>
