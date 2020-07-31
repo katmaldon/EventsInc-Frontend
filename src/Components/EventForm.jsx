@@ -12,8 +12,9 @@ class EventForm extends React.Component {
         location: "",
         price: "",
         event_url: "",
-        user_id: null //pass in user_id automatically
-    };
+        user_id: null
+    }
+
         handleSubmit = (e) => {
             e.preventDefault();
             fetch('http://localhost:3000/events', {
@@ -61,7 +62,7 @@ class EventForm extends React.Component {
         return (
             <>
                 <div className="card_title" onClick={this.toggleForm}>
-                    <h3>Add New Event</h3>
+                    <button className="button" >Add Event</button>
                 </div>
             </>
         )
@@ -74,14 +75,14 @@ class EventForm extends React.Component {
                     <Form className="new_event" onSubmit={this.handleSubmit}>
                         <Form.Group unstackable widths={2}>
                             <Form.Input
-                                label="Name: "
+                                label="Name"
                                 name="name"
                                 placeholder='Name..'
                                 valueOf={this.state.value}
                                 onChange={this.handleChange}
                                 />
                             <Form.Input
-                            label="Type: "
+                            label="Type"
                             name="type"
                             placeholder='Type..'
                             valueOf={this.state.event_type}
@@ -90,14 +91,14 @@ class EventForm extends React.Component {
                             </Form.Group>
                         <Form.Group widths={2}>
                             <Form.Input
-                                label="Image: "
+                                label="Image"
                                 name="image_url"
                                 placeholder='Image..'
                                 valueOf={this.state.image_url}
                                 onChange={this.handleChange}
                             />
                             <Form.Input
-                                label='Date: '
+                                label='Date'
                                 placeholder='Date..'
                                 name="date"
                                 valueOf={this.state.date}
@@ -106,14 +107,14 @@ class EventForm extends React.Component {
                         </Form.Group>
                         <Form.Group widths={2}>
                             <Form.Input
-                                label="Time: "
+                                label="Time"
                                 placeholder='Time..'
                                 name="time"
                                 valueOf={this.state.time}
                                 onChange={this.handleChange}
                             />
                             <Form.Input
-                                label="Location: "
+                                label="Location"
                                 name="location"
                                 placeholder='Location..'
                                 valueOf={this.state.location}
@@ -122,20 +123,20 @@ class EventForm extends React.Component {
                         </Form.Group>
                         <Form.Group widths={2}>
                             <Form.Input
-                                label="Price: "
+                                label="Price"
                                 name="price"
                                 placeholder='Price..'
                                 valueOf={this.state.price}
                                 onChange={this.handleChange}
                             />
                             <Form.Input
-                                label="Event_url: "
+                                label="Event_url"
                                 name="event_url"
                                 placeholder='Event_url...'
                                 valueOf={this.state.event_url}
                                 onChange={this.handleChange}
                             /><br></br>
-                        <Button type='submit'>Add Event</Button>
+                        <Button className="button" type='submit'>Create event</Button>
                         </Form.Group>
                     </Form>
             </div>
@@ -152,43 +153,12 @@ class EventForm extends React.Component {
                     {this.state.showForm ? this.renderBack() : null}
                 </div>
             </Form.Field>
-
-        );
-    };
+        )
+    }
 }
 
 export default EventForm;
 
-   // renderBack = ( ) => {
-    //     return (
-    //         <Form>
-    //             <Form.Group unstackable widths={2}>
-    //                 <Form.Input label='Name' placeholder='Name....' valueOf={this.state.name} onChange={this.handleChange}/>
-    //                 <Form.Input label='Type' placeholder='event_type...' />
-    //             </Form.Group>
-    //             <Form.Group widths={2}>
-    //                 <Form.Input label='Price' placeholder='Price....' />
-    //                 <Form.Input label='Event_url' placeholder='Event_url...' />
-    //             </Form.Group>
-    //             <Button type='submit'>Submit</Button>
-    //         </Form>
-    //     )
-    // }
-    // renderBack = () => {
-    //     return (
-    //         <section>
-    //             <div className="events_form">
-    //                 <form className="new_event" onSubmit={this.handleSubmit}>
-
-    //                     <label htmlFor="name" >Name:
-    //             <input
-    //                             type="text"
-    //                             name="name"
-    //                             id="name"
-    //                             value={this.state.name}
-    //                             onChange={this.handleChange}
-    //                         />
-    //                     </label>
 
     //                     <label htmlFor="name" >Type:
     //             <input

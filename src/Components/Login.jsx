@@ -1,8 +1,9 @@
 import React from 'react'
-import { Button, Divider, Form, Grid, Segment, Checkbox } from 'semantic-ui-react'
+import { Button, Divider, Form, Grid, Segment } from 'semantic-ui-react'
 
 const Login = () => (
     <Segment placeholder>
+    <div className="login_form">
         <Grid columns={2} relaxed='very' stackable>
             <Grid.Column>
                 <Form>
@@ -17,18 +18,32 @@ const Login = () => (
                         iconPosition='left'
                         label='Password'
                         type='password'
-                    />
-                    <Form.Field>
-                        <Checkbox label='Remember Me' />
-                    </Form.Field>
+                        placeholder='Password'
+                    /><br></br>
                     <Button content='Login' primary />
                 </Form>
-            </Grid.Column>
-            <Divider vertical>Don't have an account?Please</Divider>
+            </Grid.Column><br></br>
+            <Divider vertical>Don't have an account yet?</Divider>
+            <br></br>
             <Grid.Column verticalAlign='middle'>
                 <Button content='Sign up' icon='signup' size='big'/>
             </Grid.Column>
         </Grid>
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br><br></br>
 
     </Segment>
 )

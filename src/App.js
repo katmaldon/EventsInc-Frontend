@@ -22,16 +22,10 @@ function App(props) {
                 <Route path='/about' render={() => <About/> } />
                 <Route path='/' render={() => <Home/>} />
             </Switch>
-            <footer>MoKat Inc @2020</footer>
+            <footer>©2020 MoKat Productions</footer>
         </div>
     );
 }
 
 export default App;
 
-
-/*
-1. Routing
-2. toggle
-3.
-*/
