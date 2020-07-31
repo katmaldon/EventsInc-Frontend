@@ -67,11 +67,9 @@ class Login extends Component {
                                 label='Password'
                                 placeholder='Password123...NOT!'
                             />
-                            <br></br>
                             <Button classname="button" content='log in' primary />
                             <br></br><br></br>
                     <Divider vertical>Don't have an account yet?</Divider>
-                        <br></br>
                         <Button className="button" content='Sign up' icon='signup' size='big' />
                         </ul>
             </Form>

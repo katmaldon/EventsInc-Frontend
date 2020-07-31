@@ -264,7 +264,7 @@ color: #057fd0;
     display: inline-grid;
     margin: 0.5rem 0.5rem;
     background-color: #ff35789f;
-    opacity: 0.9;
+    opacity: 0.95;
     font-size: 20px;
     text-shadow: 1px 1px 0 rgb(255, 255, 0);
 }
@@ -279,8 +279,8 @@ color: #057fd0;
     height: auto;
     display: inline-grid;
     margin: 0.5rem 0.5rem;
-    background-color: rgb(143, 14, 105);
-    opacity: 0.9;
+    background-color: rgb(208 42 217);
+    opacity: 0.8;
     font-size: 20px;
     text-shadow: 1px 1px 0 rgb(255, 255, 0);
 }
@@ -327,6 +327,7 @@ form.ui.form.new_event {
     font-weight: bold;
     width: fit-content;
     padding: 6px 24px;
+    margin: 6px;
     text-decoration: none;
     display: inline-block;
     align-items: center;
