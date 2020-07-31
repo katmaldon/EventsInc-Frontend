@@ -11,6 +11,7 @@
   background-color: aliceblue;
   background-color: ;
   max-height: 300em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 img {
@@ -203,15 +204,16 @@ p {
     color: white;
     text-align: center;
     border: grey solid 1px;
-    padding: 3rem;
-    width: 50rem;
+    padding: 10px;
+    width: 70%;
     height: auto;
     display: inline-grid;
-    margin: 0.5rem 0.5rem;
-    background-color: #9327f898;
-    opacity: 0.8;
+    margin: 50px;
+    background-color: #4fc1a5;
+    opacity: 0.85;
     font-size: 24px;
-    text-shadow: 1px 1px 0 rgb(255, 255, 0);
+    font-family: 'Trebuchet MS';
+    text-shadow: 1px 1px 0 #057fd0;
 }
 
 .login_form {

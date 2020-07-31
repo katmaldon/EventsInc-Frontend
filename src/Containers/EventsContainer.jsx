@@ -44,7 +44,6 @@ class EventsContainer extends React.Component {
         const options = {
             method: "DELETE"
         }
-
         fetch(`http://localhost:3000/events/${id}`, options)
             .then(r => r.json())
             .then(this.fetchEvents)
@@ -63,7 +62,6 @@ class EventsContainer extends React.Component {
         })
     }
 
-
     handleLike = (id) => {
         const options = {
             method: 'PATCH',
@@ -79,7 +77,6 @@ class EventsContainer extends React.Component {
         fetch(`http://localhost:3000/events/${id}`, options)
             .then(res => res.json())
             .then(e => {
-                console.log(e);
                 this.likeEvent(id)
             })
     };

@@ -2,7 +2,6 @@ import React from 'react';
 
 class User extends React.Component {
 
-
     render() {
         return (
             <li className="user_card">
