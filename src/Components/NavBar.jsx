@@ -6,9 +6,11 @@ const NavBar = () => {
     return (
         <div className="navbar">
             <Link to="/login">login</Link>
-            <Link to="/">home</Link>
+            <Link to="/signup">sign up</Link>
+            <Link to="/">my profile</Link>
             <Link to="/events">events</Link>
             <Link to="/about">about</Link>
+            {/* <button className="logoutBtn" onClick={props.logout}><span role="img" aria-label="user-controls">{props.currentUser ? props.currentUser.name : "👤"} ⬇</span></button> */}
         </div>
     )
 }
