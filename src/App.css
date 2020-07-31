@@ -23,6 +23,17 @@ img {
     border-style: solid;
 }
 
+.card_image {
+
+    display:inline;
+    margin: auto;
+}
+
+.user_name {
+float:left;
+display:inline;
+width: auto;}
+
 img#header {
     max-height: max-content;
     max-width: -webkit-fill-available;
@@ -109,14 +120,19 @@ color: #057fd0;
 
 .user_card {
     align-items: center;
+    text-align: center;
     display: block;
     background-color: #0074c1;
     width: 65%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.9;
-    display: block;
+    opacity: 0.85;
     padding: 15px;
+    color: white;
+    border: grey solid 1px;
+    display: inline-grid;
+    margin: 0.5rem 0.5rem;
 }
 
 .event_cards {
@@ -147,11 +163,14 @@ color: #057fd0;
   opacity: 0.7;
 }
 
+.new_event {
+    opacity: 0.9;
+}
+
 .new_todo {
     padding: 1rem;
     display: block;
-    align-items: center;
-    width: 30%;
+    width: 60%;
     height: auto;
     margin: auto;
     display: inline-block;
@@ -163,14 +182,13 @@ color: #057fd0;
 }
 
 
-.new_event {
-    opacity: 0.9;
-}
 
 .todo_list {
-    background-color: rgb(206, 206, 255);
-    width: 65%;
-    margin: 10px;
+    background-color:rgb(86 191 246);
+    color: rgb(0, 0, 134);
+
+    width: 80%;
+    margin: auto;
     padding: 20px;
     align-items: center;
 }
@@ -239,7 +257,6 @@ color: #057fd0;
 .login_form {
     text-align: center;
     color: white;
-    text-align: center;
     border: grey solid 1px;
     padding: 3rem;
     width: 50rem;
@@ -262,7 +279,7 @@ color: #057fd0;
     height: auto;
     display: inline-grid;
     margin: 0.5rem 0.5rem;
-    background-color: #ff9a79;
+    background-color: rgb(143, 14, 105);
     opacity: 0.9;
     font-size: 20px;
     text-shadow: 1px 1px 0 rgb(255, 255, 0);
@@ -308,8 +325,11 @@ form.ui.form.new_event {
     font-family: Trebuchet MS;
     font-size: 15px;
     font-weight: bold;
+    width: fit-content;
     padding: 6px 24px;
     text-decoration: none;
+    display: inline-block;
+    align-items: center;
     /* text-shadow: 1px -1px 9px #ba1870; */
 }
 

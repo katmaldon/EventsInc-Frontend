@@ -6,9 +6,12 @@ class Todo extends Component {
         return (
                 <div className="todo_list">
                     <div className="todo_content">
-                        <div className="todo_date">10/27/2021</div>
-                        <p className="todo_item">Make costume</p>
-                        <button onClick={() => this.handleCompleted(this.id)}>{this.completed ? "DONE" : "Completed?"}</button>
+                        <div>10/27/2020: Make costume...
+                        <button onClick={() => this.handleCompleted(this.id)}>{this.completed ? "DONE" : "done?"}</button></div><br></br>
+                        <div>12/10/2021: Christmas shopping with the parents...
+                        <button onClick={() => this.handleCompleted(this.id)}>{this.completed ? "DONE" : "done?"}  </button></div><br></br>
+                        <div>04/20/2021: Book flights to Rome...
+                        <button onClick={() => this.handleCompleted(this.id)}>{this.completed ? "DONE" : "done?"}</button></div><br></br>
                     </div>
                 </div>
         );

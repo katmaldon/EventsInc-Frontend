@@ -6,8 +6,7 @@ class SignUp extends Component {
 
     state = {
         name: "",
-        password: "",
-        passwordConfirmation: ""
+        password: ""
     }
 
     handleChange = (event) => {
@@ -31,7 +30,7 @@ class SignUp extends Component {
             })
         }
 
-        if (this.state.password === this.state.passwordConfirmation) {
+        if (this.state.name && this.state.password) {
             fetch("http://localhost:3000/api/v1/signup", options)
                 .then(res => res.json())
                 .then(response => {
@@ -44,7 +43,7 @@ class SignUp extends Component {
                 })
         }
         else {
-            alert("Passwords need to match and are case-sensitive.")
+            alert("Something went wrong, please try again.")
         }
     }
 
@@ -68,13 +67,7 @@ class SignUp extends Component {
                                     label='Password'
                                     type='password'
                                     placeholder='Password123...NOT!'
-                                /><br></br>
-                                <Form.Input
-                                    icon='lock'
-                                    iconPosition='left'
-                                    label='Confirm password'
-                                    type='password'
-                                    placeholder='One more time...'
+
                                 /><br></br>
 
                             <Button content='Sign up' icon='signup' size='big' />

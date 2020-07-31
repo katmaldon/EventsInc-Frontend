@@ -48,37 +48,34 @@ class Login extends Component {
 
     render() {
         return (
-            <Segment placeholder>
-                <div className="login_form">
-                <Divider vertical><h2>Welcome back! Showtime, baby.</h2></Divider>
-                    <Grid columns={2} relaxed='very' stackable>
-                        <Grid.Column>
-                            <Form>
-                                <Form.Input
-                                    icon='user'
-                                    iconPosition='left'
-                                    label='Username'
-                                    placeholder='Pick a name, any name...'
-                                /><br></br>
-                                <Form.Input
-                                    icon='lock'
-                                    iconPosition='left'
-                                    label='Password'
-                                    type='password'
-                                    placeholder='Password123...NOT!'
-                                /><br></br>
-                                <Button content='Login' primary />
-                            </Form>
-                        </Grid.Column><br></br>
-                        <Divider vertical>Don't have an account yet?</Divider>
+                <Form className="login_form" onSubmit={this.handleSubmit}>
+                    <Divider vertical><h2>Welcome back! It's showtime, baby.</h2></Divider>
+                            <ul>
+                            <Form.Input
+                                name="name"
+                                label='Username'
+                                value={this.state.name}
+                                placeholder='Pick a name, any name...'
+                                onChange={this.handleChange}
+                                placeholder="username"
+                            />
+                            <Form.Input
+                                name="password"
+                                value={this.state.password}
+                                type="password"
+                                onChange={this.handleChange}
+                                label='Password'
+                                placeholder='Password123...NOT!'
+                            />
+                            <br></br>
+                            <Button classname="button" content='log in' primary />
+                            <br></br><br></br>
+                    <Divider vertical>Don't have an account yet?</Divider>
                         <br></br>
-                        <Grid.Column verticalAlign='middle'>
-                            <Button content='Sign up' icon='signup' size='big' />
-                        </Grid.Column>
-                    </Grid>
-                </div>
-                <br></br>
-            </Segment>
+                        <Button className="button" content='Sign up' icon='signup' size='big' />
+                        </ul>
+            </Form>
+
         )
     };
 };
